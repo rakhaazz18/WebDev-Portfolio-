@@ -8,6 +8,10 @@ Route::view('/about','about');
 Route::view('/blog','blog');
 Route::view('/contact','contact');
 
+// Example routes untuk tugas layouting
+Route::view('/example-home','pages.home-example');
+Route::view('/example-about','pages.about-example');
+
 Route::post('/contact-send', function (\Illuminate\Http\Request $request) {
     // Basic validation
     $data = $request->validate([
