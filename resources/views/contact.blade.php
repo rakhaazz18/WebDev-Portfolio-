@@ -3,94 +3,64 @@
 @section('title','Kontak — Rakha')
 
 @section('content')
-<div style="display:flex;flex-direction:column;gap:1rem">
-  <section class="card" style="display:flex;flex-direction:column;gap:1rem">
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
-      <div>
-        <h2 style="margin:0;font-size:1.6rem">Hubungi Kami</h2>
-        <p style="color:var(--muted);margin-top:.25rem">Punya ide atau butuh bantuan teknis? Kirim pesan dan tim kami akan merespons dalam 1-2 hari kerja.</p>
-      </div>
-      <div style="display:flex;gap:.5rem">
-        <a href="/" class="btn-ghost">Kembali</a>
-        <a href="/home" class="btn">Lihat Layanan</a>
-      </div>
-    </div>
-  </section>
+<section class="contact-section fade-in">
+  <div class="contact-container">
+    <!-- Left: Contact Info -->
+    <div class="contact-info">
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="contact-desc">
+        Whether you have questions about my projects, collaborations, or opportunities, feel free to reach out — I'd love to connect.
+      </p>
 
-  <div class="grid grid-cols-2">
-    <div class="card" style="display:flex;flex-direction:column;gap:1rem">
-      <div style="display:flex;gap:1rem;align-items:center">
-        <div style="width:56px;height:56px;border-radius:.5rem;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700">EN</div>
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
         <div>
-          <div style="font-weight:700">Email &amp; Support</div>
-          <div style="color:var(--muted)">hello@webdev-buelza.id<br/>support@webdev-buelza.id</div>
+          <h4>Email</h4>
+          <p>amuhammad08@student.ciputra.ac.id</p>
         </div>
       </div>
 
-      <div style="display:flex;gap:1rem;flex-wrap:wrap">
-        <div style="flex:1;min-width:180px">
-          <strong>Jam Kerja</strong>
-          <div style="color:var(--muted)">Sen–Jum 09:00–17:00</div>
-        </div>
-        <div style="flex:1;min-width:180px">
-          <strong>Telepon</strong>
-          <div style="color:var(--muted)">+62 812-3456-7890</div>
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <div>
+          <h4>Phone</h4>
+          <p>+62 821-9494-9464</p>
         </div>
       </div>
 
-      <div>
-        <strong>Akun Sosial</strong>
-        <div style="display:flex;gap:.5rem;margin-top:.5rem">
-          <a class="btn-ghost" href="#">Twitter</a>
-          <a class="btn-ghost" href="#">LinkedIn</a>
-          <a class="btn-ghost" href="#">GitHub</a>
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <div>
+          <h4>Location</h4>
+          <p>Makassar, Indonesia</p>
         </div>
       </div>
     </div>
 
-    <div class="card" style="position:relative">
-      <form id="contact-form" action="/contact-send" method="POST" style="display:flex;flex-direction:column;gap:.75rem">
+    <!-- Right: Contact Form -->
+    <div class="contact-form">
+      <form id="contact-form" method="POST" action="/contact-send">
         @csrf
-        <label style="display:flex;flex-direction:column">
-          <span style="font-weight:600">Nama</span>
-          <input name="name" required type="text" placeholder="Nama kamu" style="padding:.6rem;border-radius:.5rem;border:1px solid #e6e9ee" />
-        </label>
-
-        <label style="display:flex;flex-direction:column">
-          <span style="font-weight:600">Email</span>
-          <input name="email" required type="email" placeholder="email@contoh.com" style="padding:.6rem;border-radius:.5rem;border:1px solid #e6e9ee" />
-        </label>
-
-        <label style="display:flex;flex-direction:column">
-          <span style="font-weight:600">Topik</span>
-          <select name="topic" style="padding:.6rem;border-radius:.5rem;border:1px solid #e6e9ee">
-            <option value="general">Umum / Pertanyaan</option>
-            <option value="quote">Permintaan Penawaran</option>
-            <option value="support">Dukungan Teknis</option>
-            <option value="other">Lainnya</option>
-          </select>
-        </label>
-
-        <label style="display:flex;flex-direction:column">
-          <span style="font-weight:600">Pesan</span>
-          <textarea name="message" required rows="5" placeholder="Ceritakan kebutuhan atau pertanyaanmu" style="padding:.6rem;border-radius:.5rem;border:1px solid #e6e9ee"></textarea>
-        </label>
-
-        <div style="display:flex;justify-content:space-between;align-items:center">
-          <div class="form-message" style="color:var(--muted)"></div>
-          <button type="submit" class="btn">Kirim Pesan</button>
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" name="name" placeholder="Enter your name" required>
         </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="text" name="phone" placeholder="Enter your phone number">
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea name="message" placeholder="Write your message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn-gold">Send Message</button>
+        <div class="form-message" style="margin-top:1rem;display:none"></div>
       </form>
-
-      <div style="position:absolute;right:1rem;top:1rem;color:var(--muted);font-size:.85rem">Fast reply &amp; friendly :)</div>
     </div>
   </div>
-
-  <div class="card" style="margin-top:1rem">
-    <h3 style="margin:0 0 .5rem 0">Lokasi Kantor</h3>
-    <div style="height:220px;background:linear-gradient(135deg,rgba(124,58,237,.06),rgba(6,182,212,.03));display:flex;align-items:center;justify-content:center;border-radius:.5rem;color:var(--muted)">Peta / Embed (placeholder)</div>
-  </div>
-  
-</div>
-
+</section>
 @endsection

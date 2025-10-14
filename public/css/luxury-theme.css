@@ -1,0 +1,371 @@
+/* === Luxury White Black Gold Theme === */
+:root {
+  --color-bg: #ffffff;
+  --color-text: #111111;
+  --color-accent: #d4af37;
+  --color-accent-hover: #e0c068;
+  --color-dark: #1a1a1a;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Poppins', sans-serif;
+}
+
+/* GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  transition: all 0.3s ease;
+}
+
+/* NAVBAR */
+.navbar {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-accent);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.navbar a {
+  color: var(--color-dark);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: var(--color-accent);
+}
+
+/* HEADER NAME SECTION */
+.hero-section {
+  text-align: center;
+  background: var(--color-dark);
+  color: white;
+  padding: 60px 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  margin-bottom: 40px;
+}
+
+.hero-section h1 {
+  color: var(--color-accent);
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+}
+
+.hero-section p {
+  color: #cfcfcf;
+}
+
+/* PROFILE IMAGE */
+.profile-img {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  border: 3px solid var(--color-accent);
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
+}
+
+.profile-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 35px rgba(212, 175, 55, 0.5);
+}
+
+/* Responsive adjustments for profile image */
+@media (max-width: 768px) {
+  .profile-img {
+    max-width: 200px;
+  }
+}
+
+/* BUTTONS */
+.btn-gold {
+  background: var(--color-accent);
+  color: var(--color-dark);
+  padding: 10px 25px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  background: var(--color-dark);
+  color: var(--color-accent);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+}
+
+/* SECTION TITLE */
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  text-align: center;
+  margin: 40px 0 15px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: var(--color-accent);
+  margin: 10px auto;
+  border-radius: 2px;
+}
+
+/* SECTION TITLE LEFT ALIGNED */
+.section-title-left {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  text-align: left;
+  margin: 0 0 15px 0;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title-left::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: var(--color-accent);
+  margin: 10px auto;
+  border-radius: 2px;
+}
+
+/* FOOTER */
+.footer {
+  background: var(--color-dark);
+  color: #f1f1f1;
+  text-align: center;
+  padding: 25px 0;
+  margin-top: 50px;
+  border-top: 1px solid var(--color-accent);
+}
+
+.footer a {
+  color: var(--color-accent);
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: var(--color-accent-hover);
+}
+
+/* HOVER GOLD EFFECT */
+.gold-hover:hover {
+  color: var(--color-accent);
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+}
+
+/* SOCIAL MEDIA ICONS */
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: var(--color-dark);
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.social-icon:hover {
+  background: var(--color-accent);
+  color: var(--color-dark);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+}
+
+.social-icon i {
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover i {
+  transform: rotate(5deg);
+}
+
+/* ABOUT SECTION STYLING */
+.about-section {
+  padding: 2rem;
+}
+
+.about-container {
+  max-width: 100%;
+}
+
+.about-container h3 {
+  font-family: var(--font-heading);
+  color: var(--color-dark);
+}
+
+.about-container ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.about-container ul li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.about-container ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* SMOOTH SCROLL */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === CONTACT SECTION === */
+.contact-section {
+  background: #ffffff;
+  color: var(--color-text);
+  padding: 80px 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  width: 100%;
+  max-width: 1100px;
+  background: #ffffff;
+  border: 2px solid var(--color-accent);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 50px 60px;
+  transition: all 0.3s ease;
+}
+
+/* Left Info */
+.contact-info h2 {
+  color: var(--color-accent);
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.contact-desc {
+  margin-bottom: 30px;
+  color: #666666;
+  line-height: 1.6;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.contact-item i {
+  font-size: 1.4rem;
+  color: var(--color-accent);
+  background: rgba(212, 175, 55, 0.1);
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--color-accent);
+}
+
+.contact-item h4 {
+  font-size: 1rem;
+  color: var(--color-dark);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.contact-item p {
+  color: #666666;
+  margin: 0;
+}
+
+/* Right Form */
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: var(--color-dark);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  transition: all 0.3s ease;
+  background: #ffffff;
+  color: var(--color-text);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+  outline: none;
+}
+
+/* Submit Button in Form */
+.contact-form .btn-gold {
+  align-self: flex-start;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 30px 20px;
+  }
+  
+  .contact-section {
+    padding: 40px 5%;
+  }
+}
