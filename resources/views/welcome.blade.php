@@ -20,7 +20,7 @@
     <div style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap;margin-bottom:2rem">
       <img src="{{ file_exists(public_path('images/rakha.png')) ? asset('images/rakha.png') : asset('images/rakhaplaceholder.svg') }}" alt="Profile Picture" class="profile-img">
       <div style="flex:1;min-width:300px">
-        <h2 class="section-title-left">👋 Tentang Saya</h2>
+        <h2 class="section-title-left">👋 About Me</h2>
         
         <!-- Social Media Icons -->
         <div style="display:flex;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap">
@@ -42,45 +42,45 @@
 
     <div class="about-container">
       <p style="color:var(--muted);line-height:1.8;margin-bottom:1.5rem">
-        Halo, saya <strong style="color:var(--color-accent)">Muhammad Rakha</strong>, mahasiswa 
-        <strong>semester 3 Program Studi Informatika di Universitas Ciputra Surabaya (Makassar)</strong>. 
-        Saya punya ketertarikan besar pada dunia <strong>pengembangan web, desain antarmuka (UI/UX), dan teknologi interaktif</strong>. 
-        Bagi saya, teknologi bukan cuma tentang logika dan fungsi, tapi juga tentang bagaimana membuat sesuatu terasa hidup, elegan, dan menyenangkan untuk digunakan ✨
+        Hello, I'm <strong style="color:var(--color-accent)">Muhammad Rakha</strong>, a 
+        <strong>3rd semester Informatics student at Universitas Ciputra Surabaya (Makassar)</strong>. 
+        I have a great interest in <strong>web development, UI/UX design, and interactive technology</strong>. 
+        For me, technology isn't just about logic and function, but also about making something feel alive, elegant, and enjoyable to use ✨
       </p>
 
-      <h3 class="gold-hover" style="font-size:1.3rem;margin-top:2rem;margin-bottom:1rem">💻 Minat dan Keahlian</h3>
+      <h3 class="gold-hover" style="font-size:1.3rem;margin-top:2rem;margin-bottom:1rem">💻 Interests & Skills</h3>
       <ul style="color:var(--muted);line-height:1.8;margin-bottom:1.5rem">
-        <li style="margin-bottom:0.75rem"><strong style="color:#111">Web Development ⚙️</strong> — Menggunakan Laravel (PHP) dan JavaScript untuk membangun website interaktif dengan struktur kode yang bersih dan efisien.</li>
-        <li style="margin-bottom:0.75rem"><strong style="color:#111">UI/UX Design 🎨</strong> — Menciptakan tampilan elegan dan minimalis dengan gaya <em>white, black, and gold luxury</em>.</li>
-        <li style="margin-bottom:0.75rem"><strong style="color:#111">Pemrograman dan Database 🧠</strong> — Menerapkan konsep OOP (Java) dan memahami manajemen data menggunakan MySQL serta desain ERD.</li>
+        <li style="margin-bottom:0.75rem"><strong style="color:#111">Web Development ⚙️</strong> — Using Laravel (PHP) and JavaScript to build interactive websites with clean and efficient code structure.</li>
+        <li style="margin-bottom:0.75rem"><strong style="color:#111">UI/UX Design 🎨</strong> — Creating elegant and minimalist interfaces with a <em>white, black, and gold luxury</em> style.</li>
+        <li style="margin-bottom:0.75rem"><strong style="color:#111">Programming & Database 🧠</strong> — Applying OOP concepts (Java) and understanding data management using MySQL and ERD design.</li>
       </ul>
 
-      <h3 class="gold-hover" style="font-size:1.3rem;margin-top:2rem;margin-bottom:1rem">🚀 Pengalaman Organisasi</h3>
+      <h3 class="gold-hover" style="font-size:1.3rem;margin-top:2rem;margin-bottom:1rem">🚀 Organizational Experience</h3>
       <ul style="color:var(--muted);line-height:1.8;margin-bottom:1.5rem">
-        <li style="margin-bottom:0.75rem"><strong style="color:#111">Lead di Google Developer Groups on Campus (GDGoC) UC Makassar 👨‍💻</strong> — Memimpin tim untuk membangun komunitas teknologi kampus dan menyelenggarakan kegiatan edukatif.</li>
-        <li style="margin-bottom:0.75rem"><strong style="color:#111">Koordinator Event di Informatics Student Union (ISU) 🎯</strong> — Mengatur perencanaan dan pelaksanaan berbagai kegiatan mahasiswa Informatika.</li>
+        <li style="margin-bottom:0.75rem"><strong style="color:#111">Lead at Google Developer Groups on Campus (GDGoC) UC Makassar 👨‍💻</strong> — Leading the team to build a campus technology community and organize educational activities.</li>
+        <li style="margin-bottom:0.75rem"><strong style="color:#111">Event Coordinator at Informatics Student Union (ISU) 🎯</strong> — Managing the planning and execution of various Informatics student activities.</li>
       </ul>
 
       <p style="color:var(--muted);line-height:1.8;margin-bottom:1.5rem">
-        Melalui kegiatan tersebut, saya terus mengasah kemampuan <strong style="color:#111">leadership, komunikasi, dan kolaborasi lintas bidang</strong>, 
-        yang juga saya terapkan dalam dunia pengembangan teknologi.
+        Through these activities, I continuously develop my <strong style="color:#111">leadership, communication, and cross-field collaboration</strong> skills, 
+        which I also apply in technology development.
       </p>
 
-      <h3 class="gold-hover" style="font-size:1.3rem;margin-top:2rem;margin-bottom:1rem">🌟 Visi</h3>
+      <h3 class="gold-hover" style="font-size:1.3rem;margin-top:2rem;margin-bottom:1rem">🌟 Vision</h3>
       <p style="color:var(--muted);line-height:1.8">
-        Saya ingin terus berkembang sebagai <strong style="color:#111">developer dan desainer antarmuka</strong> yang mampu memadukan 
-        <strong style="color:#111">teknologi, estetika, dan pengalaman pengguna</strong> dalam setiap karya yang saya buat. 
-        Setiap proyek adalah ruang eksplorasi untuk belajar, berkreasi, dan meninggalkan kesan positif bagi siapa pun yang menggunakannya.
+        I want to continue growing as a <strong style="color:#111">developer and interface designer</strong> who can combine 
+        <strong style="color:#111">technology, aesthetics, and user experience</strong> in every work I create. 
+        Every project is an exploration space to learn, create, and leave a positive impression on anyone who uses it.
       </p>
     </div>
   </section>
 
   <section class="skills card fade-in">
-    <h2 class="section-title">Keahlian</h2>
+    <h2 class="section-title">Skills</h2>
     <ul style="list-style:none;padding:0">
       <li class="gold-hover" style="padding:0.5rem 0">✨ HTML, CSS, JavaScript</li>
       <li class="gold-hover" style="padding:0.5rem 0">✨ PHP & Laravel</li>
-      <li class="gold-hover" style="padding:0.5rem 0">✨ UI/UX dasar</li>
+      <li class="gold-hover" style="padding:0.5rem 0">✨ Basic UI/UX</li>
     </ul>
   </section>
 

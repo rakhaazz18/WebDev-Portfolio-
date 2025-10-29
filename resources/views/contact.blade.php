@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','Kontak — Rakha')
+@section('title','Contact — Rakha')
 
 @section('content')
 <section class="contact-section fade-in">

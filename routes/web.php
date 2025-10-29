@@ -1,11 +1,36 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Experience;
+use App\Models\Skill;
+use App\Models\Project;
 
 Route::view('/','welcome');
-Route::view('/home','home');
+
+Route::get('/home', function() {
+    $experiences = Experience::orderBy('start_date', 'desc')->limit(3)->get();
+    $skills = Skill::orderBy('proficiency', 'desc')->limit(6)->get();
+    $projects = Project::where('is_featured', true)->latest()->limit(3)->get();
+    return view('home', compact('experiences', 'skills', 'projects'));
+});
+
 Route::view('/about','about');
-Route::view('/blog','blog');
+
+Route::get('/experience', function() {
+    $experiences = Experience::orderBy('start_date', 'desc')->get();
+    return view('experience', compact('experiences'));
+});
+
+Route::get('/skills', function() {
+    $skills = Skill::orderBy('category')->orderBy('proficiency', 'desc')->get();
+    return view('skills', compact('skills'));
+});
+
+Route::get('/projects', function() {
+    $projects = Project::latest()->get();
+    return view('projects', compact('projects'));
+});
+
 Route::view('/contact','contact');
 
 // Example routes untuk tugas layouting

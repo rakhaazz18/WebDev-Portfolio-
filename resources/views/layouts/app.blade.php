@@ -36,17 +36,21 @@
     <header id="site-header" style="border-bottom:2px solid #d4af37;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);transition:all .28s ease">
       <div class="container" style="display:flex;align-items:center;justify-content:space-between">
         <a href="/" style="display:flex;align-items:center;gap:.6rem;text-decoration:none">
-          <div style="width:42px;height:42px;border-radius:.6rem;background:#d4af37;border:2px solid #1a1a1a;display:flex;align-items:center;justify-content:center;color:#1a1a1a;font-weight:700">RK</div>
+          <div style="width:42px;height:42px;border-radius:50%;overflow:hidden;border:2px solid #d4af37;background:#f5f5f5">
+            <img src="{{ asset('images/rakha-profile.jpg') }}" alt="Rakha" style="width:100%;height:100%;object-fit:cover;object-position:center center">
+          </div>
           <div>
             <div id="brand-full" style="font-weight:700;color:#111111">Rakha</div>
-            <div id="brand-sub" style="font-size:.8rem;color:#666666;margin-top:2px">Creative web solutions</div>
+            <div id="brand-sub" style="font-size:.8rem;color:#666666;margin-top:2px">Figma Boyz</div>
           </div>
         </a>
         <nav>
           <a href="/">Welcome</a>
           <a href="/home">Home</a>
           <a href="/about">About</a>
-          <a href="/blog">Blog</a>
+          <a href="/experience">Experience</a>
+          <a href="/skills">Skills</a>
+          <a href="/projects">Projects</a>
           <a href="/contact">Contact</a>
         </nav>
       </div>
@@ -61,7 +65,7 @@
     <footer style="border-top:1px solid rgba(17,24,39,.04);padding:2rem 0;background:transparent">
       <div class="container" style="display:flex;flex-direction:column;gap:1rem;align-items:center">
         <div style="display:flex;gap:.5rem"><a class="btn-ghost" href="#">Privacy</a><a class="btn-ghost" href="#">Terms</a></div>
-        <div style="color:var(--muted);font-size:0.95rem;text-align:center">© {{ date('Y') }} Rakha — Built with care.</div>
+        <div style="color:var(--muted);font-size:0.95rem;text-align:center">© {{ date('Y') }} Rakha — Yeahh.</div>
       </div>
     </footer>
 
