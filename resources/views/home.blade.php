@@ -136,7 +136,6 @@
   <div class="card fade-in">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem">
       <h3 class="section-title" style="margin:0">Top Skills</h3>
-      <a href="/skills" style="color:var(--gold);text-decoration:none;font-size:0.9rem">View All →</a>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem">
       @forelse($skills as $skill)

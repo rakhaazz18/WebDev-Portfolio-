@@ -21,11 +21,6 @@ Route::get('/experience', function() {
     return view('experience', compact('experiences'));
 });
 
-Route::get('/skills', function() {
-    $skills = Skill::orderBy('category')->orderBy('proficiency', 'desc')->get();
-    return view('skills', compact('skills'));
-});
-
 Route::get('/projects', function() {
     $projects = Project::latest()->get();
     return view('projects', compact('projects'));
