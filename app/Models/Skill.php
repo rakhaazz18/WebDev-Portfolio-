@@ -9,4 +9,13 @@ class Skill extends Model
 {
     /** @use HasFactory<\Database\Factories\SkillFactory> */
     use HasFactory;
+
+    /**
+     * The projects that belong to the skill.
+     */
+    public function projects()
+    {
+        return $this->belongsToMany(\App\Models\Project::class, 'project_skill')
+                    ->withTimestamps();
+    }
 }

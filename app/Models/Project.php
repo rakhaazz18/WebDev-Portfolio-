@@ -11,6 +11,7 @@ class Project extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
         'title',
         'description',
         'image_url',
@@ -26,4 +27,21 @@ class Project extends Model
         'completed_date' => 'date',
         'is_featured' => 'boolean',
     ];
+
+    /**
+     * The skills that belong to the project.
+     */
+    public function skills()
+    {
+        return $this->belongsToMany(\App\Models\Skill::class, 'project_skill')
+                    ->withTimestamps();
+    }
+
+    /**
+     * The user that owns the project.
+     */
+    public function user()
+    {
+        return $this->belongsTo(\App\Models\User::class);
+    }
 }

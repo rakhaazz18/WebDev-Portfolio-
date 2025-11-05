@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Experience;
 use App\Models\Skill;
 use App\Models\Project;
+use App\Http\Controllers\ProjectController;
 
 Route::view('/','welcome');
 
@@ -21,10 +22,7 @@ Route::get('/experience', function() {
     return view('experience', compact('experiences'));
 });
 
-Route::get('/projects', function() {
-    $projects = Project::latest()->get();
-    return view('projects', compact('projects'));
-});
+Route::get('/projects', [ProjectController::class, 'index']);
 
 Route::view('/contact','contact');
 

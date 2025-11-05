@@ -161,25 +161,9 @@
       <h3 class="section-title" style="margin:0">Featured Projects</h3>
       <a href="/projects" style="color:var(--gold);text-decoration:none;font-size:0.9rem">View All →</a>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem">
-      @forelse($projects as $project)
-      <div style="border:1px solid rgba(212,175,55,0.3);padding:1.25rem;border-radius:8px">
-        <h4 class="gold-hover" style="margin:0 0 0.75rem 0;font-size:1.125rem">{{ $project->title }}</h4>
-        <p style="color:rgba(255,255,255,0.7);margin-bottom:1rem;line-height:1.6">
-          {{ Str::limit($project->description, 120) }}
-        </p>
-        @if($project->technologies && is_array($project->technologies))
-        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem">
-          @foreach(array_slice($project->technologies, 0, 3) as $tech)
-          <span style="background:rgba(212,175,55,0.2);color:var(--gold);padding:0.2rem 0.6rem;border-radius:4px;font-size:0.8rem">{{ $tech }}</span>
-          @endforeach
-        </div>
-        @endif
-        <a href="/projects" style="color:var(--gold);text-decoration:none;font-size:0.9rem">Learn More →</a>
-      </div>
-      @empty
-      <p style="color:var(--muted);text-align:center;padding:2rem 0;grid-column:1/-1">No featured projects available.</p>
-      @endforelse
+    <div>
+      {{-- Use the projects partial to display project list (passes $projects from controller/view) --}}
+      @include('partials.projects_list', ['projects' => $projects])
     </div>
   </div>
 </section>
