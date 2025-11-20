@@ -22,3 +22,11 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# Project specific
+/public/images/projects/*
+!/public/images/projects/.gitkeep
+test_database.php
+database/database.sqlite
+/storage/logs/*.log
+!/storage/logs/.gitignore

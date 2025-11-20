@@ -1,0 +1,188 @@
+# ================================================================
+# QUICK COMMANDS - PORTFOLIO DATABASE
+# ================================================================
+
+# ================================================================
+# CARA TERCEPAT - PILIH SALAH SATU
+# ================================================================
+
+# OPSI 1: Double Click (Paling Mudah)
+# ----------------------------------------
+# Klik 2x file: import_database.bat
+# atau
+# Klik kanan → Run with PowerShell: import_database.ps1
+
+
+# OPSI 2: Command Line (PowerShell)
+# ----------------------------------------
+cd "C:\Users\Rakha\Documents\WebDev_BuElza\WebDev Portfolio\database"
+
+# Import schema
+C:\xampp\mysql\bin\mysql.exe -u root < portfolio_database.sql
+
+# Import sample data
+C:\xampp\mysql\bin\mysql.exe -u root portfolio_db < sample_data.sql
+
+
+# OPSI 3: Via MySQL Command Prompt
+# ----------------------------------------
+# Buka MySQL command line dari XAMPP Control Panel
+# Atau jalankan:
+C:\xampp\mysql\bin\mysql.exe -u root
+
+# Lalu jalankan:
+SOURCE C:/Users/Rakha/Documents/WebDev_BuElza/WebDev Portfolio/database/portfolio_database.sql;
+SOURCE C:/Users/Rakha/Documents/WebDev_BuElza/WebDev Portfolio/database/sample_data.sql;
+
+
+# ================================================================
+# COMMANDS BERDASARKAN SITUASI
+# ================================================================
+
+# Jika pakai XAMPP (default - no password)
+# ----------------------------------------
+cd C:\xampp\mysql\bin
+.\mysql.exe -u root < "C:\Users\Rakha\Documents\WebDev_BuElza\WebDev Portfolio\database\portfolio_database.sql"
+
+
+# Jika pakai WAMP
+# ----------------------------------------
+cd C:\wamp64\bin\mysql\mysql8.0.31\bin
+.\mysql.exe -u root -p < "C:\Users\Rakha\Documents\WebDev_BuElza\WebDev Portfolio\database\portfolio_database.sql"
+# Masukkan password saat diminta
+
+
+# Jika MySQL punya password
+# ----------------------------------------
+.\mysql.exe -u root -pYOURPASSWORD < portfolio_database.sql
+
+
+# ================================================================
+# LARAVEL ARTISAN COMMANDS
+# ================================================================
+
+# Dari folder project Laravel
+cd "C:\Users\Rakha\Documents\WebDev_BuElza\WebDev Portfolio"
+
+# Update .env dulu:
+# DB_DATABASE=portfolio_db
+# DB_USERNAME=root
+# DB_PASSWORD=
+
+# Fresh migration (drop all & recreate)
+php artisan migrate:fresh
+
+# Migration + Seeder
+php artisan migrate:fresh --seed
+
+# Seeder saja
+php artisan db:seed
+
+# Specific seeder
+php artisan db:seed --class=PortfolioSeeder
+
+
+# ================================================================
+# VERIFICATION COMMANDS
+# ================================================================
+
+# Check database via MySQL
+C:\xampp\mysql\bin\mysql.exe -u root -e "SHOW DATABASES;"
+C:\xampp\mysql\bin\mysql.exe -u root -e "USE portfolio_db; SHOW TABLES;"
+
+# Check via Laravel
+php artisan migrate:status
+php artisan tinker
+>>> User::count()
+>>> Project::all()
+
+
+# ================================================================
+# COMMON MYSQL QUERIES
+# ================================================================
+
+# Login ke MySQL
+C:\xampp\mysql\bin\mysql.exe -u root
+
+# Setelah login:
+USE portfolio_db;
+SHOW TABLES;
+SELECT * FROM users;
+SELECT * FROM projects;
+SELECT COUNT(*) FROM skills;
+
+# Lihat struktur tabel
+DESCRIBE users;
+DESCRIBE projects;
+
+# Test relasi
+SELECT p.title, GROUP_CONCAT(s.name) as skills 
+FROM projects p 
+LEFT JOIN project_skill ps ON p.id = ps.project_id 
+LEFT JOIN skills s ON ps.skill_id = s.id 
+GROUP BY p.id;
+
+
+# ================================================================
+# TROUBLESHOOTING COMMANDS
+# ================================================================
+
+# Drop database (jika mau mulai dari awal)
+C:\xampp\mysql\bin\mysql.exe -u root -e "DROP DATABASE IF EXISTS portfolio_db;"
+
+# Create database manual
+C:\xampp\mysql\bin\mysql.exe -u root -e "CREATE DATABASE portfolio_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+
+# Check MySQL service
+# Buka XAMPP Control Panel → Apache dan MySQL harus hijau/running
+
+
+# ================================================================
+# BACKUP COMMANDS (untuk nanti)
+# ================================================================
+
+# Backup database
+C:\xampp\mysql\bin\mysqldump.exe -u root portfolio_db > backup_portfolio.sql
+
+# Backup dengan timestamp
+$timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
+C:\xampp\mysql\bin\mysqldump.exe -u root portfolio_db > "backup_$timestamp.sql"
+
+
+# ================================================================
+# PHPMYMIN ACCESS
+# ================================================================
+
+# Buka browser:
+http://localhost/phpmyadmin
+
+# Default credentials:
+# Username: root
+# Password: (kosong untuk XAMPP)
+
+
+# ================================================================
+# FILE YANG TERSEDIA
+# ================================================================
+
+# database/portfolio_database.sql    - Schema database
+# database/sample_data.sql           - Sample data untuk testing
+# database/ERD_Portfolio.drawio      - Diagram ERD
+# database/README_DATABASE.md        - Dokumentasi lengkap
+# database/import_database.ps1       - Auto import script (PowerShell)
+# database/import_database.bat       - Auto import script (Batch)
+# database/QUICK_COMMANDS.txt        - File ini
+
+
+# ================================================================
+# ONE-LINER COMMANDS (Copy-Paste Langsung)
+# ================================================================
+
+# Import everything at once (XAMPP - no password)
+cd "C:\Users\Rakha\Documents\WebDev_BuElza\WebDev Portfolio\database"; C:\xampp\mysql\bin\mysql.exe -u root < portfolio_database.sql; C:\xampp\mysql\bin\mysql.exe -u root portfolio_db < sample_data.sql
+
+# Laravel fresh start
+cd "C:\Users\Rakha\Documents\WebDev_BuElza\WebDev Portfolio"; php artisan migrate:fresh --seed
+
+# Quick check
+C:\xampp\mysql\bin\mysql.exe -u root -e "USE portfolio_db; SELECT COUNT(*) as total_users FROM users; SELECT COUNT(*) as total_projects FROM projects;"

@@ -1,61 +1,202 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🎨 Portfolio Website
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern and elegant portfolio website built with Laravel 12, showcasing projects, skills, experiences, and blog posts.
 
-## About Laravel
+## ✨ Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- 📝 **Blog Posts** - Share your thoughts and articles
+- 💼 **Work Experience** - Display your professional journey
+- 🚀 **Project Showcase** - Highlight your best work with featured projects
+- 🛠️ **Skills Management** - Categorized skills with proficiency levels
+- 🔗 **Project-Skill Relationships** - Link projects with technologies used
+- 👤 **User Management** - Multi-user support with authentication
+- 🎨 **Luxury Theme** - Beautiful and modern UI design
+- 📱 **Responsive Design** - Works perfectly on all devices
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🛠️ Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Backend:** Laravel 12
+- **Frontend:** Blade Templates, JavaScript, CSS
+- **Database:** MySQL
+- **Server:** PHP 8.2+
+- **Package Manager:** Composer, NPM
 
-## Learning Laravel
+## 📊 Database Structure
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+The project includes:
+- **Users** - User authentication and profiles
+- **Projects** - Portfolio projects with images and links
+- **Skills** - Technical skills with categories and proficiency
+- **Experiences** - Work history and positions
+- **Posts** - Blog articles and content
+- **Project-Skill** - Many-to-many relationship pivot table
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+See `database/ERD_Portfolio.drawio` for complete database diagram.
 
 ## Code of Conduct
 
 In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+## 🚀 Installation
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Prerequisites
+- PHP 8.2 or higher
+- Composer
+- MySQL/MariaDB
+- Node.js & NPM
 
-## License
+### Setup Steps
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/rakhaazz18/WebDev-Portfolio-.git
+   cd WebDev-Portfolio-
+   ```
+
+2. **Install dependencies**
+   ```bash
+   composer install
+   npm install
+   ```
+
+3. **Environment configuration**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+
+4. **Configure database in `.env`**
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=portfolio_db
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
+
+5. **Import database**
+   
+   **Option 1: Using SQL files (Recommended)**
+   ```bash
+   # Via PowerShell
+   cd database
+   C:\xampp\mysql\bin\mysql.exe -u root < portfolio_database.sql
+   C:\xampp\mysql\bin\mysql.exe -u root portfolio_db < sample_data.sql
+   
+   # Or double-click
+   import_database.bat
+   ```
+   
+   **Option 2: Using Laravel Migration**
+   ```bash
+   php artisan migrate:fresh --seed
+   ```
+
+6. **Build assets**
+   ```bash
+   npm run build
+   # or for development
+   npm run dev
+   ```
+
+7. **Run the application**
+   ```bash
+   php artisan serve
+   ```
+
+8. **Visit** `http://localhost:8000`
+
+## 🔐 Default Login
+
+If you imported sample data:
+```
+Email: admin@portfolio.com
+Password: password
+```
+
+## 📁 Project Structure
+
+```
+portfolio/
+├── app/
+│   ├── Http/Controllers/    # Application controllers
+│   └── Models/              # Eloquent models
+├── database/
+│   ├── migrations/          # Database migrations
+│   ├── seeders/             # Database seeders
+│   ├── portfolio_database.sql   # Complete database schema
+│   ├── sample_data.sql          # Sample data for testing
+│   └── ERD_Portfolio.drawio     # Database ERD diagram
+├── public/
+│   ├── css/                 # Compiled CSS
+│   ├── js/                  # Compiled JavaScript
+│   └── images/              # Public images
+├── resources/
+│   ├── views/               # Blade templates
+│   ├── css/                 # Source CSS
+│   └── js/                  # Source JavaScript
+└── routes/
+    └── web.php              # Web routes
+```
+
+## 🧪 Testing
+
+Test database connection:
+```bash
+php test_database.php
+```
+
+Run Laravel tests:
+```bash
+php artisan test
+```
+
+## 📝 Available Routes
+
+- `/` - Home page
+- `/about` - About page
+- `/projects` - Projects showcase
+- `/experience` - Work experience
+- `/contact` - Contact form
+
+## 🛠️ Development
+
+```bash
+# Clear cache
+php artisan cache:clear
+php artisan config:clear
+php artisan view:clear
+
+# Run migrations
+php artisan migrate
+
+# Seed database
+php artisan db:seed
+
+# Create new seeder
+php artisan make:seeder NameSeeder
+```
+
+## 📊 Database Tools
+
+- **phpMyAdmin**: `http://localhost/phpmyadmin`
+- **View ERD**: Open `database/ERD_Portfolio.drawio` in [draw.io](https://app.diagrams.net)
+- **Documentation**: See `database/README_DATABASE.md`
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## 👨‍💻 Author
+
+**Rakha Aziz**
+- GitHub: [@rakhaazz18](https://github.com/rakhaazz18)
+
+---
+
+Built with ❤️ using Laravel
